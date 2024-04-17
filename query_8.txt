@@ -1,0 +1,29 @@
+MongoPlayGround query - melléklet 1 (corvo@:Adatbázis) ugyanez a compassnál
+1.
+db.collection.find({},
+{
+  firstName: 1,
+  lastname: 1,
+  user_id: 1,
+  _id: 0
+})
+
+2.
+db.collection.find({	// {feltétel}{parancs}
+  firstName: "Grace"
+},
+{
+  email: 1,
+  password: 1,
+  _id: 0
+})
+
+Mongo BD compass 7.
+{likes_count: {$gt: 2}}
+{ingredients: 0, rating:0}
+{cook_time: -1}
+{}
+
+shell
+ db.receptek.find({likes_count: {$gt: 2}}, {rating:0}).sort({cook_time: -1}) //ctrl enter
+ db.receptek.find({title: { $regex: /Tacos/ }}))
