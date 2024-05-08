@@ -1,0 +1,27 @@
+1. 
+Filter: {languages: "English", awards.wins: 2}
+
+Project: {title:1, directors: 1, writers: 1, year: 1, _id:0}
+
+Sort: {year: -1}
+
+2. 
+db.users.find({"email": {$regex: /.com/}},{"name":1, "email":1})
+
+3. 
+db.movies.aggregate([
+
+... {$match: {"year":{$gt:1950}}},
+
+... {$group: {_id:"$rated",atlag: {$avg:"$runtime"}}}])
+
+4. 
+match (p:Person)-[:acted_in]->(m:Movies)
+where m.released > 1960 or m.title contains "love"
+return p.name as Név, m.title as Cím
+order by m.title desc
+
+5. 
+match (p:Person)-[:acted_in]->(m:Movies)
+where p.born > 1980
+return p.name as Actor, p.born as BirthYear, count(m.title) AS NumMoviesActedIn
