@@ -1,0 +1,20 @@
+CREATE TABLE STUDENT 
+
+          ... (
+
+          ... ID INT PRIMARY KEY,
+
+          ... Nev TEXT,
+
+          ... Teljesitett_felevek LIST<INT>, 
+
+          ... Eredmenyek MAP<INT,DOUBLE>, 
+
+          ... Nyelvtudas SET<TEXT>
+
+          ... );
+INSERT INTO STUDENT (ID, nev, Teljesitett_felevek,Eredmenyek,Nyelvtudas)
+VALUES (1, 'Kis Bela', [1,2],{1:4,6,2:3,3}, ['angol'] );
+
+INSERT INTO STUDENT (ID, nev, Teljesitett_felevek,Eredmenyek,Nyelvtudas)
+VALUES (2, 'Nagy Anna', [1],{1:2,1}, ['francia'] );
